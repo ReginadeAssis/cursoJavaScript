@@ -23,4 +23,21 @@ var identificacao = typeof nome;
 //op2
 console.log(identificacao);
 //Liste os tipos de dados(7) e classifique em primitivo e não primitivo:
-//String(p); Number(p); Boolean(p); Undeffined(p); Null(p); Symbol(p) e Object(np)
+//String(p); Number(p); Boolean(p); Undeffined(p-cria objeto 
+//sem valor); Null(p); Symbol(p) e Object(np)
+//Crie uma variável 
+var simbolo = Symbol ();
+console.log(typeof simbolo);
+//Qualquer dado somado a uma string vira uma string.
+//A soma pode ser mesclada tbm var soma = 'tal coisa' + variável +'outra';
+//Para anular as aspas duplas é só colocar a barra na frente.
+//"Aprendendo \"javascript"\" aqui"
+//Cuidado com $ template string poruqe ou usa ele ou o +
+var gols = 1000;
+var frase1 = 'Romario fez' + gols + 'gols';
+var frase2 = `Romário fez ${gols} gols`;
+console.log(frase1,frase2);
+//Observe Regina como você pode colocar a função dentro de uma variável:
+var nome = 'Regina';
+var verificarTipo = typeof nome;
+console.log(verificarTipo);
