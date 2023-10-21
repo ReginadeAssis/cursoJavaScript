@@ -3,28 +3,28 @@ var idade = 28;
 var gols = 1000;
 var pi = 3.14; //no caso de decimel usa como em inglês
 var expo = 2e10; //é literalmente 2 elevado a 10 poderia 2**10.
-//Qual a precisão máxima? 
+//Qual a precisão máxima?
 var precisao = 15;
 //Quais os operadores aritiméticos básicos, exemplifique:
-var soma = 1+1 ;
-var subtracao = 1-1;
-var multiplicacao = 1*8 ;
-var divisao = 1/2;
-var expoente = 2**2;
-var modulo = 14 % 5 ; //o que ele chama de módulo eu chamo de resto da divisão.
-console.log(soma,subtracao,multiplicacao,divisao,expoente,modulo);
+var soma = 1 + 1;
+var subtracao = 1 - 1;
+var multiplicacao = 1 * 8;
+var divisao = 1 / 2;
+var expoente = 2 ** 2;
+var modulo = 14 % 5; //o que ele chama de módulo eu chamo de resto da divisão.
+console.log(soma, subtracao, multiplicacao, divisao, expoente, modulo);
 //Quando a divisão dá quebrada como pega o último número que faz essa quebra?
 var moduloOuRestoDaDivisao = 14 % 5;
 console.log(moduloOuRestoDaDivisao);
 //o símbolo que ele chama de módulo eu chamo de resto da divisão.
-modulo = 2556625 / 2; 
+modulo = 2556625 / 2;
 console.log(modulo);
 //O que acontece quando adicionamos um número a uma string com os diferentes operadores?
-var tentaFazerAOperacaoCasoAStringSejaSonumeroEleFaz = '100' * '2';
+var tentaFazerAOperacaoCasoAStringSejaSonumeroEleFaz = "100" * "2";
 console.log(tentaFazerAOperacaoCasoAStringSejaSonumeroEleFaz);
 //no caso do operador + não tem papo ele concatena
 //O que é o Nan-quando é obtido?
-var quandoTemTextoOuMaisNaStringEleNaoSoma = 'comprei' / 2;
+var quandoTemTextoOuMaisNaStringEleNaoSoma = "comprei" / 2;
 console.log(quandoTemTextoOuMaisNaStringEleNaoSoma);
 //A ordem importa? Qual seria ela?
 //sim, é multiplicação, divisao, soma e subtração. Entretanto podemos mudar td c ( {[...]})
@@ -51,11 +51,11 @@ var total = 10 + (5 * 2) / 2 + 20;
 console.log(total);
 
 // Crie duas expressões que retornem NaN
-var nAN1 = 'abc'/4;
-var nAN2 = 'cal' + 50;
+var nAN1 = "abc" / 4;
+var nAN2 = "cal" + 50;
 console.log(nAN1, nAN2);
 // Somar a string '200' com o número 50 e retornar 250
-var indef = +'200' + 50
+var indef = +"200" + 50;
 console.log(indef);
 //caso coloquemos o + ou - no conteúdo da variável ou até mesmo no nome transformamos uma string em um número positivo ou negativo.
 
@@ -67,5 +67,39 @@ console.log(++incrment, incrment++);
 var numero = "80";
 var unidade = "kg";
 var peso = numero + unidade; // '80kg'
-var pesoPorDois = ++numero / 2 + 'kg'; 
-console.log(peso,pesoPorDois);
+var pesoPorDois = ++numero / 2 + "kg";
+console.log(peso, pesoPorDois);
+// Verifique se a sua idade é maior do que a de algum parente
+// Dependendo do resultado coloque no console 'É maior', 'É igual' ou 'É menor'
+
+// Qual valor é retornado na seguinte expressão?
+var expressao22 = (5 - 2) && (5 - ' ') && (5 - 2);
+console.log(expressao22);
+// Verifique se as seguintes variáveis são Truthy ou Falsy
+var nome = 'Andre';
+var idade = 28;
+var possuiDoutorado = false;
+var empregoFuturo;
+var dinheiroNaConta = 0;
+//Para começar coloca tds elas no console.log dps !! na frente. Variável sem nada dentro dá undeffined que é falso
+console.log(!!nome, !!idade, !!possuiDoutorado, !!empregoFuturo, !!dinheiroNaConta);
+
+// Compare o total de habitantes do Brasil com China (valor em milhões)
+var brasil = 207;
+var china = 1340;
+if(brasil > china){
+  console.log('Brasil');} else {console.log('China')}
+
+// O que irá aparecer no console?
+if(('Gato' === 'gato') && (5 > 2)) {
+  console.log('Verdadeiro');
+} else {
+  console.log('Falso');
+}
+//Porque o e procura e para no primeiro falso.
+// O que irá aparecer no console?
+if(('Gato' === 'gato') || (5 > 2)) {
+  console.log('Gato' && 'Cão');
+} else {
+  console.log('Falso');
+}
