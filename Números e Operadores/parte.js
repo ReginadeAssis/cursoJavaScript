@@ -73,33 +73,94 @@ console.log(peso, pesoPorDois);
 // Dependendo do resultado coloque no console 'É maior', 'É igual' ou 'É menor'
 
 // Qual valor é retornado na seguinte expressão?
-var expressao22 = (5 - 2) && (5 - ' ') && (5 - 2);
+var expressao22 = 5 - 2 && 5 - " " && 5 - 2;
 console.log(expressao22);
 // Verifique se as seguintes variáveis são Truthy ou Falsy
-var nome = 'Andre';
+var nome = "Andre";
 var idade = 28;
 var possuiDoutorado = false;
 var empregoFuturo;
 var dinheiroNaConta = 0;
 //Para começar coloca tds elas no console.log dps !! na frente. Variável sem nada dentro dá undeffined que é falso
-console.log(!!nome, !!idade, !!possuiDoutorado, !!empregoFuturo, !!dinheiroNaConta);
+console.log(
+  !!nome,
+  !!idade,
+  !!possuiDoutorado,
+  !!empregoFuturo,
+  !!dinheiroNaConta
+);
 
 // Compare o total de habitantes do Brasil com China (valor em milhões)
 var brasil = 207;
 var china = 1340;
-if(brasil > china){
-  console.log('Brasil');} else {console.log('China')}
+if (brasil > china) {
+  console.log("Brasil");
+} else {
+  console.log("China");
+}
 
 // O que irá aparecer no console?
-if(('Gato' === 'gato') && (5 > 2)) {
-  console.log('Verdadeiro');
+if ("Gato" === "gato" && 5 > 2) {
+  console.log("Verdadeiro");
 } else {
-  console.log('Falso');
+  console.log("Falso");
 }
 //Porque o e procura e para no primeiro falso.
 // O que irá aparecer no console?
-if(('Gato' === 'gato') || (5 > 2)) {
-  console.log('Gato' && 'Cão');
+if ("Gato" === "gato" || 5 > 2) {
+  console.log("Gato" && "Cão");
 } else {
-  console.log('Falso');
+  console.log("Falso");
 }
+//Como usa bolean? 0 p falso 1 para verdadeiro
+//Em geral usamos if(coisa avaliada){condição caso //verdadeiro;} else{condição coso falso;}
+//Com a estrutura abaixo faça com que ele mostre undefined e o valor de x na tela:
+let x;
+var possuiGraduacao = true;
+if (possuiGraduacao) {
+  console.log(x);
+} else {
+  console.log("É mentira");
+}
+//ou
+var y = 10;
+var possuiGraduacao = true;
+if (possuiGraduacao) {
+  console.log(y);
+} else {
+  console.log("É mentira");
+}
+//Qual a diferença entre usar o let e o var?
+//Com o let ele cria a variável de qualquer forma
+//Como funciona essa questão de else if?
+//Você pode usar quantos else if quiser, mas o final é else.
+//Crie uma condicional que expõe o nome se ele existir
+var nome34 = "André";
+if (nome34) {
+  console.log(nome);
+} else {
+  console.log("não tem nome");
+}
+//Como fazer se eu quiser que dê negativo obrigatoriamente?
+//Posso atribuir um dos valores: false, 0, NaN, null, undefinned, espaço textual com ' " ou ` todo o resto é true
+//Como negar uma expressão? Adicionando ! no valor que a variável recebe. If(!variável)
+//Como saber dps de manipulada qual era o valor original da expressão? Adicionando 2x !
+var tentativa22 = "azul";
+if (tentativa22) {
+  console.log("É verdade");
+} else {
+  console.log("É falso");
+}
+if (!tentativa22) {
+  console.log("É verdade");
+} else {
+  console.log("É falso");
+}
+//Defina:
+//= atribui valor
+//== vê se é semelhante
+//=== vê se é control c control v
+//Como ver se é diferente?
+//Colocando !
+var gato = "gato";
+console.log(gato !== "gato");
