@@ -159,8 +159,46 @@ if (!tentativa22) {
 //Defina:
 //= atribui valor
 //== vê se é semelhante
-//=== vê se é control c control v
+//=== vê se é control c control v-tem que ser o mesmo tipo de dado tbm
 //Como ver se é diferente?
 //Colocando !
 var gato = "gato";
 console.log(gato !== "gato");
+//!== é o máximo de "exatamente diferente"
+//O && chamado e busca dar falso levando em conta o valor das variáveis é como na lógica mesmo o & só é vdd com duas verdades
+if (5 - 5 && 5 + 5) {
+  console.log("é verdadeiro");
+} else {
+  console.log("não é o fim");
+}
+var condicional = 3 - 5 && 4 - 8;
+if (condicional) {
+  console.log("é verdadeiro");
+} else {
+  console.log("não é o fim");
+}
+if (!condicional) {
+  console.log("é verdadeiro");
+} else {
+  console.log("não é o fim");
+}
+//Nas operações tem o || chamado ou que respeita a lógica bastando um verdadeiro.
+//Quando misturamos operadores os mais restritivos dominarão tal qual na lógica.
+var condicional45 = 5 - 5 || 5 + 5 || 10 - 2;
+console.log(condicional45);
+//Quando vc usa como uma equação ele dá o resultado usando os operadores lógicos como em uma prova de matemática.
+var condicional99 = 5 - 5 || (5 + 5 && 10 - 2);
+console.log(condicional99);
+//O que é switch e como usar?
+//Quando vc tem várias opções para o valor da variável o importante é colocar o break dps do principal e atribuir um default.
+var corFavorita = "vermelho";
+switch (corFavorita) {
+  case "Azul":
+    console.log("Olhe para o céu");
+    break;
+  case "Amarelo":
+    console.log("Olhe para o sol");
+  default:
+    console.log("Feche os olhos");
+}
+//A estrutura do switch fica switch() { case valor possível: função break; .... sem break e por fim default: função;}
