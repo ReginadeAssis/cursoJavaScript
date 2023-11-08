@@ -15,7 +15,7 @@ function imc(peso, altura) {
   const imc = peso / altura ** 2;
   return imc;
 }
-imc(80, 1.8);
+console.log(imc(80, 1.8));
 
 //É obrigatório para uma função possuir argumentos?
 //Não, isso depende só da função.
@@ -35,3 +35,5 @@ corfavorita();
 addEventListener("click", function () {
   console.log("clicou");
 });
+
+console.log("teste");
