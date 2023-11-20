@@ -11,29 +11,39 @@ var bg = menu.backgroundColor;
 menu.backgroundColor = "#222";
 //Para add uma propriedade ao objeto
 menu.color = "blue";
-//Ou sejja objeto.proprieddade = valor -> Caso a propriedade exista troca o valor, caso contrário cria uma nova.
+//Ou seja objeto.proprieddade = valor -> Caso a propriedade exista troca o valor, caso contrário cria uma nova.
 
 //Se serve para proepriedade serve para função:
 //objeto.propriedade(nova ou velha) = function() {}
-menu.esconder = function (i) {
-  if (i > 2) {
-    console.log("escondido");
+menu.esconder = function (x) {
+  if (x == "2") {
+    return "escondido";
+  } else {
+    return "nada";
   }
 };
-var i = 2;
+console.log(menu.esconder("3"));
+
 //console.log(menu.esconder(3)); Pq ele dá undeffined? Já que não está dentro do objeto.
 //Crie um objeto com seus dados pessoais:
 var Reginat = {
-  nome: Regina,
-  outroNome: Maciel,
+  nome: "Regina",
+  outroNome: "Maciel",
   idade: 25,
   altura: 1.57,
   peso: 62,
 };
 //Crie um método no objeto anterior que mostre seu nome completo:
-//Console.log(typeof nome);//Lembrei disso ...pq ele não faz nem dá undeffined?
-//Reginat.sobreNome = function(){Console.log(`${nome} ${outroNome}`;}
-
+//console.log(typeof nome);//Não lembrei disso
+Reginat.sobreNome = function () {
+  return `${this.nome} ${this.outroNome}`;
+};
+//console.log escrever dnovo
+//Reginat.sobreNome = function () {
+//console.log( `${this.nome} ${this.outroNome}`);
+//};
+Reginat.sobreNome();
+console.log(Reginat.sobreNome());
 //Modifique o valor da propriedade preco para 3000
 var carro = {
   preco: 1000,
@@ -41,13 +51,13 @@ var carro = {
   marca: "Audi",
 };
 carro.preco = 3000;
-//Tbm não sei qual o problema aqui...
+
 //Crie um objeto que seja um labrador preto de 10 anos que late ao ver um homem
 var labrador = {
   idade: 10,
   cor: "Preto",
   latir(pessoa) {
-    if (pessoa == homem) {
+    if (pessoa == "homem") {
       console.log("AuAU");
     } else {
       console.log("nada");
@@ -55,5 +65,4 @@ var labrador = {
   },
 };
 
-console.log(latir(homem));
-//Agr lascou
+console.log(labrador.latir("Regina"));
