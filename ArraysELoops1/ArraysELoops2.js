@@ -26,4 +26,40 @@ for (var item = 0; item < videoGames2.length; item++) {
   console.log(videoGames2[item]);
 }
 
-//Vc tbm pode adicionar uma condição e um break logoapós o console.log sem problema:
+//Vc tbm pode adicionar uma condição e um break logo após o console.log sem problema:
+var videoGames2 = ["Switch", "PS4", "XBOX", "3DS"];
+for (var item = 0; item < videoGames2.length; item++) {
+  console.log(videoGames2[item]);
+  break;
+}
+
+var frutas = ["Banana", "Pera", "Maça", "Abacaxi", "Uva"];
+frutas.forEach(function (item) {
+  console.log(item);
+});
+
+//também podemos puxar mais de um parametro:
+
+frutas.forEach(function (fruta, index) {
+  console.log(fruta, index);
+});
+
+///Além de fazer ele repetir a cada puxada:
+
+frutas.forEach(function (fruta, index, array) {
+  console.log(fruta, index, array);
+});
+
+//O .pop vai tirando assim ele criou uma forma de exibir que vai reduzindo
+frutas.forEach(function (fruta, index) {
+  frutas.pop();
+  console.log(fruta, index, frutas);
+});
+
+//Sendo assim mais uma consideração é que ele pode fazer várias coisas no for each não precisa ser uma coisa de cada vez
+//Crie um array com os anos que o brasil venceu a copa:
+//1959,1962,1970,1994 e 2002
+
+//Interaja com o array utilizando um loop para mostrar no console o brasil ganhou e o ano da copa
+//Interaja com o loop das frutas e para no pera
+//
