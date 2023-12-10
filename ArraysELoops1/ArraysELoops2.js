@@ -58,8 +58,17 @@ frutas.forEach(function (fruta, index) {
 
 //Sendo assim mais uma consideração é que ele pode fazer várias coisas no for each não precisa ser uma coisa de cada vez
 //Crie um array com os anos que o brasil venceu a copa:
-//1959,1962,1970,1994 e 2002
+
+let copa = [1959, 1962, 1970, 1994, 2002];
 
 //Interaja com o array utilizando um loop para mostrar no console o brasil ganhou e o ano da copa
+copa.forEach(function (copa) {
+  console.log(`O brasil ganhou a copa ${copa}`);
+});
+
 //Interaja com o loop das frutas e para no pera
-//
+let feira = ["Banana", "Pera", "Maça", "Abacaxi", "Uva"];
+// for(var item = 0; item < 2; item++){
+//   console.log(frutas);
+// } -não sei pq não funciona-pq declarado mas nunca lido?
+frutas.forEach(function (feira) {});
