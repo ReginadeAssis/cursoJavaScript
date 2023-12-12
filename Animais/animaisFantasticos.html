@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site</title>
+  <link rel="stylesheet" href="./animaisFotos/animais.css">
+  <script src="animaisFotos/animais.js"> </script>
+
+</head>
+
+<body>
+  <nav class="menu">
+    <ul>
+      <li><a href="#animais"></a> Animais</li>
+      <li><a href="#faq"></a> Faq</li>
+      <li><a href="#contato"></a> Contato</li>
+      <li><a href="https://pt.wikipedia.org/wiki/Raposa"></a> Site Completo</li>
+      <!-- Esses são links para conteúdos internos do site -->
+    </ul>
+  </nav>
+  <!-- A section abaixo tem duas classes e um id é estranho mas é realele criou esse grid para usar ele como base de menipulação -->
+  <section class="grid-section animais" id="animais">
+    <h1 class="titulo"> Animais Fantásticos</h1>
+    <ul>
+      <li>
+        <img src="./animaisFotos/imagem1.jpg">
+      </li>
+      <li>
+        <img src="./animaisFotos/imagem2.jpg">
+      </li>
+      <li>
+        <img src="./animaisFotos/imagem3.jpg">
+      </li>
+      <li>
+        <img src="./animaisFotos/imagem4.jpg">
+      </li>
+      <li>
+        <img src="./animaisFotos/imagem5.jpg">
+      </li>
+      <li>
+        <img src="./animaisFotos/imagem6.jpg">
+      </li>
+    </ul>
+    <!-- Na mesma section da imagem fica o texto que vai acompanhar elas e deu uma classe para o texto chamada animais-descricao. Sendo que cada um dos animais ganhou uma section -->
+    <div class="animais-descricao">
+      <section>
+        <h2>Raposa</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut excepturi adipisci quia. Nisi eligendi unde ducimus veniam assumenda veritatis, alias obcaecati, fugiat voluptatum modi voluptatibus quaerat impedit autem, a nam.</p>
+      </section>
+      <section>
+        <h2>Esquilos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut excepturi adipisci quia. Nisi eligendi unde ducimus veniam assumenda veritatis, alias obcaecati, fugiat voluptatum modi voluptatibus quaerat impedit autem, a nam.</p>
+      </section>
+      <section>
+        <h2>Urso</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut excepturi adipisci quia. Nisi eligendi unde ducimus veniam assumenda veritatis, alias obcaecati, fugiat voluptatum modi voluptatibus quaerat impedit autem, a nam.</p>
+      </section>
+      <section>
+        <h2>Lobo</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut excepturi adipisci quia. Nisi eligendi unde ducimus veniam assumenda veritatis, alias obcaecati, fugiat voluptatum modi voluptatibus quaerat impedit autem, a nam.</p>
+      </section>
+      <section>
+        <h2>Macaco</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut excepturi adipisci quia. Nisi eligendi unde ducimus veniam assumenda veritatis, alias obcaecati, fugiat voluptatum modi voluptatibus quaerat impedit autem, a nam.</p>
+      </section>
+      <section>
+        <h2>Leão</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut excepturi adipisci quia. Nisi eligendi unde ducimus veniam assumenda veritatis, alias obcaecati, fugiat voluptatum modi voluptatibus quaerat impedit autem, a nam.</p>
+      </section>
+    </div>
+  </section>
+  <section class="grid-section faq" id="faq">
+    <!-- Aqui a mesma coisa tem duas classes grid-section é uma a faq é a outra e o id faq -->
+    <h1> Faq</h1>
+    <!-- Para as perguntas e respostas temos um dl abrigando dt e dd o t fica com as perguntas e o d com a respos/descrição nesse caso -->
+    <dl>
+      <dt>Qual a idade dos animais?</dt>
+      <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </dd>
+      <dt>Eles são fantásticos?</dt>
+      <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </dd>
+      <dt>Qual a diferença?</dt>
+      <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </dd>
+      <dt>Como proteger?</dt>
+      <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </dd>
+    </dl>
+  </section>
+  <!-- Depois da section das perguntas veio a section do contato. E tbm atribuiu a mesma classe grid section adicionando mais uma classe a contato. Além do id de contato-->
+  <section class="grid-section contato" id="contato">
+    <h1>Contato</h1>
+    <!-- Quando ele combinou as imagens com o texto colocou elas em uma lista aqui para colocar só a imagem do mapa ele colocou em uma div só a imagem do mapa -->
+    <div class="mapa">
+      <img src="./animaisFotos/mapa.png">
+    </div>
+    <!-- Na mesma section do contato ele colocou uma lista com as informações para contato. e deu uma classe dados -->
+    <ul class="dados">
+      <li>regnamaciel3@gmail.com</li>
+      <li>+55 (21) 5586-6254</li>
+      <li> Rua fantasia, nº2</li>
+      <li> Rio de Janeiro, RJ</li>
+    </ul>
+  </section>
+  <footer class="copy">
+    <p> Todos os direitos reservados</p>
+  </footer>
+
+</body>
+
+</html>
