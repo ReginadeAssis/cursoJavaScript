@@ -1,0 +1,93 @@
+body,
+h1,
+h2,
+ul,
+li,
+p,
+dd,
+dt,
+dl {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+/* Primeiro tirou o estilo que já vem em tudo. */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+/* Todas as imagens vão para display block para não dar problema com a exibição e 100% ela vai virar responsiva. */
+
+body {
+  background-color: #faf6ed;
+  color: #222;
+  /* aqui o color dá a cor do texto- para com a mania de color-text */
+  -webkit-font-smoothing: antialiased;
+  /* Para tirar a suavidade que por padrão o browser tenta impor */
+  display: grid;
+  /* Todo o site passa a ser grid */
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+  /* Começa colocando as colunas das pontas como frações 1fr em cada lado do site para ele não "colar" a segunda coluna da esquerda para direita tem 120px fixos e terceira da esqueda para direita vai responder ao tamanho da janela-por isso max e min */
+  /* Foi fazendo as configurações gerais */
+}
+
+/* Começou a chamar as classes para configurar dentro delas */
+.menu {
+  grid-column: 3 / 5;
+  /* Diz que ele pega do início da terceira até o final da última(4), mas coloca 5 pq o final da última coluna é 5. Na vdd não entendi??*/
+  margin-top: 2rem;
+  /* A rem é uma unidade relativa de pixels que depende do site */
+  margin-bottom: 2 rem;
+  background: #fb5;
+}
+
+/* Para colocar item do lado do outro foi dentro da lista do menu e criou um display flex */
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  /* Diz para item quebrar caso não dê no site */
+  padding: 10px;
+}
+
+/* E segue destemidamente para cada item do menu, ou seja dentro do menu e dentro da lista a palavra em si. */
+.menu li {
+  display: block;
+  /* Só os nomes viraram display block */
+  padding: 10 px;
+  /* Para tirar das bordas */
+  margin-right: 10px;
+  color: #222;
+  text-decoration: none;
+  /* Esse tira o sublinhado */
+  font-family: monospace;
+  font-weight: bold;
+  text-decoration: uppercase;
+  /* Para o nome ficar em maiuscula */
+  font-size: 0.875 rem;
+  letter-spacing: 0.1 rem;
+  /* Literalmente cada letrinha */
+}
+
+/* Passou para a formatação do grid section que é a classe que envolve todas as seções */
+
+.grid-section {
+  grid-column: 2 / 4;
+  /* Primeiro de tudo ele posiciona todo o conteudo presente nessa coluna dentro do display grid do site todo dizendo que vai ficar entre as coluna 2 e 4. */
+  width: 100%;
+  /* quer que essa sessão também responda junto a coluna */
+  box-sizing: border-box;
+  /* Tem que colocar isso para a coluna acumular o espaço que ele coloca de padding abaixo */
+  padding: 10 px;
+  /* esse padding separa o conteúdo da ponta da coluna onde ele está */
+  display: grid;
+  /* Dentro da coluna ele criou outro grid para "arrumar" o conteúdo */
+  grid-template-columns: 120px 300px 1fr;
+  /* Croiu três colunas da esquerda para direita 100px a outra 300 px e a outra 1fr. A primeira coluna para título a segunda para os animais e a terceira para o texto*/
+  grid-gap: 20px;
+  /* para separar entre si as três colunas de grid que ele criou só dentro dessa parte  */
+  margin-top: 4 rem;
+  /* para afastar do topo td esse conteúdo da coluna 2 geral do site*/
+}
