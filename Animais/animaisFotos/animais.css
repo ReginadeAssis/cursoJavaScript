@@ -91,3 +91,178 @@ body {
   margin-top: 4 rem;
   /* para afastar do topo td esse conteúdo da coluna 2 geral do site*/
 }
+
+.titulo {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 6rem;
+  line-height: 1;
+  /* dá um espaço entre as linhas */
+  font-weight: 400;
+  margin-bottom: 1rem;
+  grid-column: 1 / 4;
+}
+
+.animais p {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  /* dá um espaço entre as linhas */
+  margin: 1rem;
+  /* dá margem */
+}
+
+.animais h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  /* para ficar respondendo já que está em porcentagem */
+  text-transform: uppercase;
+  /* para ficar tudo maiusculo */
+  letter-spacing: 0.1em;
+  /* para dar espaço entre as letras */
+  margin-bottom: 1rem;
+  /* para separar o paragrafo do titulo h2 */
+  color: #e54;
+}
+
+.animais h2::before {
+  /* quando coloca assim ele cria logo acima um espaço e vc pode personalizar */
+  content: "";
+  /* exigido pq usou before mas ele pode ficar vazio  */
+  display: inline-block;
+  /* para que fique na mesma linha */
+  width: 40px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #fb5;
+}
+
+.animais-lista {
+  /* pegou o que ele queria transformar na barra de imagens nocaso a lista de imagens */
+  height: 370px;
+  overflow-y: scroll;
+  /* isso diz que o que for além do eixo y vc quer que ele crie um scrool */
+  grid-column: 2;
+  /* levou para a segunda coluna a de 300px */
+}
+
+.animais-lista::-webkit-scrollbar {
+  /* esse carnaval todo é só para estilizar a barra do scrool com tamanho */
+  width: 18px;
+}
+.animais-lista::-webkit-scrollbar-thumb {
+  background: #fb5;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+  /* é o retangulo que contém o quadrado que desce */
+}
+
+.animais-lista::-webkit-scrollbar-track {
+  background: #faf6ed;
+  /* é o quadrado da barra de scrool */
+}
+
+.animais-descricao section {
+  margin-bottom: 3rem;
+  /* para separar os blocos de texto */
+}
+
+.faq-lista {
+  grid-column: 2 / 4;
+}
+
+.faq-lista dt {
+  font-family: monospace;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  /* da espaço entre as linhas */
+}
+
+.faq-lista dt::before {
+  content: "";
+  display: inline-block;
+  /* para ficar paradinho na mesma linha */
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #fb5;
+}
+
+.faq-lista dd {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0.5rem;
+  margin-left: 30px;
+}
+
+.mapa {
+  /* coloca ele na mesma coluna dos animais */
+  grid-column: 2;
+}
+
+.dados {
+  grid-column: 3;
+}
+
+.dados li {
+  margin-bottom: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dados li::before {
+  content: "";
+  display: inline-block;
+  /* para ficar paradinho na mesma linha */
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #fb5;
+}
+
+.copy {
+  grid-column: 3 / 5;
+  margin-bottom: 2rem;
+  background-color: #fb5;
+}
+
+.copy p {
+  padding: 20 px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* Ele disse que para o site ficar respondendo esse media resolve */
+@media (max-width: 700px) {
+  /* dentro do parentese vai mais ou mens onde o site começa a "quebrar" */
+  body {
+    grid-template-columns: 1fr;
+  }
+  /* esses itens abaixo são aqueles que estão dentro do body */
+  .menu,
+  .grid-section,
+  .copy {
+    grid-column: 1;
+    /* vc tem tds esses elementos na unica coluna do body mas mantendo suas posições lá do grid inicial gerador */
+  }
+  .grid-section {
+    grid-template-columns: 100px, 1fr;
+    grid-gap: 10px;
+  }
+  .animais-lista {
+    grid-column: 1;
+  }
+  .faq-lista,
+  .dados,
+  .mapa {
+    grid-column: 1 / 3;
+  }
+  .grid-section h1 {
+    font-size: 3rem;
+  }
+  .menu {
+    margin-top: 0px;
+    /* disse que ficava feio e tirou a margem */
+  }
+  .copy {
+    margin-bottom: 0px;
+    /* disse que ficava feio e tirou a margem */
+  }
+}

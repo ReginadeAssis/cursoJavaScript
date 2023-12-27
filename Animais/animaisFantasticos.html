@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site</title>
   <link rel="stylesheet" href="./animaisFotos/animais.css">
-  <script src="animaisFotos/animais.js"> </script>
+
 
 </head>
 
 <body>
-  <nav class="menu">
+  <nav class="menu" id="teste">
     <ul>
       <li><a href="#animais"></a> Animais</li>
       <li><a href="#faq"></a> Faq</li>
@@ -23,7 +23,7 @@
   <!-- A section abaixo tem duas classes e um id é estranho mas é realele criou esse grid para usar ele como base de menipulação -->
   <section class="grid-section animais" id="animais">
     <h1 class="titulo"> Animais Fantásticos</h1>
-    <ul>
+    <ul class="animais-lista">
       <li>
         <img src="./animaisFotos/imagem1.jpg">
       </li>
@@ -73,9 +73,9 @@
   </section>
   <section class="grid-section faq" id="faq">
     <!-- Aqui a mesma coisa tem duas classes grid-section é uma a faq é a outra e o id faq -->
-    <h1> Faq</h1>
+    <h1 class="titulo"> Faq</h1>
     <!-- Para as perguntas e respostas temos um dl abrigando dt e dd o t fica com as perguntas e o d com a respos/descrição nesse caso -->
-    <dl>
+    <dl class="faq-lista">
       <dt>Qual a idade dos animais?</dt>
       <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </dd>
@@ -92,7 +92,7 @@
   </section>
   <!-- Depois da section das perguntas veio a section do contato. E tbm atribuiu a mesma classe grid section adicionando mais uma classe a contato. Além do id de contato-->
   <section class="grid-section contato" id="contato">
-    <h1>Contato</h1>
+    <h1 class="titulo">Contato</h1>
     <!-- Quando ele combinou as imagens com o texto colocou elas em uma lista aqui para colocar só a imagem do mapa ele colocou em uma div só a imagem do mapa -->
     <div class="mapa">
       <img src="./animaisFotos/mapa.png">
@@ -108,7 +108,7 @@
   <footer class="copy">
     <p> Todos os direitos reservados</p>
   </footer>
-
+  <script src="./script39.js"> </script>
 </body>
 
 </html>
