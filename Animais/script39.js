@@ -53,6 +53,27 @@ console.log(linkInterno.href);
 // o all puxa justamente tds os que tiverem dentro ali do item que vc está chamando. COmo exemplo ele pegou todas as imgs que estão dentro de animais
 const animaisImg = document.querySelectorAll(".animais img");
 console.log(animaisImg);
-//retorna os resultados na forma dessa lista node que parece um array com metodos e propriedades
-//Esse método animaisImg é estatico ainda que eu mude o animais img selecionado anteriormente é o que vale. O get by class ou tag consegue atualizar
+//retorna os resultados na forma dessa lista node que parece um array com metodos e propriedades do html colection mas tem outras opções.
+//Esse método animaisImg é estatico ainda que eu mude o animais img selecionado anteriormente é o que vale. O get by class ou tag consegue atualizar. Quando ele seleciona assim pega tds que são os dois o animais e tbm img.
 console.log(animaisImg[1]);
+// Esse 1 chama o segundo item da lista já que começa do zero-não esqueça.
+//Resolveu falar das diferenças entre html colection e node list e focou nos métodos que poderão ser usados.A node list tem mais métodos.
+
+//Retorne no console tds as imagens do site
+const todasAsImagens = document.querySelectorAll("img");
+console.log(todasAsImagens);
+//Retorne só as img que começam com a palavra imagem
+const imagemQueComecaComImagem = document.querySelectorAll(
+  'img[src^="img/imagem"]'
+);
+console.log(imagemQueComecaComImagem);
+//Selecione tds os links internos onde href começa com #
+const linkInternos = document.querySelector('[href^="#"]');
+console.log(linkInternos);
+//selecione o primeiro h2 dentro de .animais-descricao
+const primeiroH2 = document.querySelector("h2");
+//tbm retornaria se no lugar de h2 tivesse .animais-descricao  h2
+console.log(primeiroH2);
+//Selecione o ultimo p do site
+const ultimoPDoSite = document.querySelector(".copy p:last-child");
+console.log(ultimoPDoSite);
