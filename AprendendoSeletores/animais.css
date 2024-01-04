@@ -1,0 +1,268 @@
+body,
+h1,
+h2,
+ul,
+li,
+p,
+dd,
+dt,
+dl {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+/* Primeiro tirou o estilo que já vem em tudo. */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+/* Todas as imagens vão para display block para não dar problema com a exibição e 100% ela vai virar responsiva. */
+
+body {
+  background-color: #faf6ed;
+  color: #222;
+  /* aqui o color dá a cor do texto- para com a mania de color-text */
+  -webkit-font-smoothing: antialiased;
+  /* Para tirar a suavidade que por padrão o browser tenta impor */
+  display: grid;
+  /* Todo o site passa a ser grid */
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+  /* Começa colocando as colunas das pontas como frações 1fr em cada lado do site para ele não "colar" a segunda coluna da esquerda para direita tem 120px fixos e terceira da esqueda para direita vai responder ao tamanho da janela-por isso max e min */
+  /* Foi fazendo as configurações gerais */
+}
+
+/* Começou a chamar as classes para configurar dentro delas */
+.menu {
+  grid-column: 3 / 5;
+  /* Diz que ele pega do início da terceira até o final da última(4), mas coloca 5 pq o final da última coluna é 5. Na vdd não entendi??*/
+  margin-top: 2rem;
+  /* A rem é uma unidade relativa de pixels que depende do site */
+  margin-bottom: 2 rem;
+  background: #fb5;
+}
+
+/* Para colocar item do lado do outro foi dentro da lista do menu e criou um display flex */
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  /* Diz para item quebrar caso não dê no site */
+  padding: 10px;
+}
+
+/* E segue destemidamente para cada item do menu, ou seja dentro do menu e dentro da lista a palavra em si. */
+.menu li {
+  display: block;
+  /* Só os nomes viraram display block */
+  padding: 10 px;
+  /* Para tirar das bordas */
+  margin-right: 10px;
+  color: #222;
+  text-decoration: none;
+  /* Esse tira o sublinhado */
+  font-family: monospace;
+  font-weight: bold;
+  text-decoration: uppercase;
+  /* Para o nome ficar em maiuscula */
+  font-size: 0.875 rem;
+  letter-spacing: 0.1 rem;
+  /* Literalmente cada letrinha */
+}
+
+/* Passou para a formatação do grid section que é a classe que envolve todas as seções */
+
+.grid-section {
+  grid-column: 2 / 4;
+  /* Primeiro de tudo ele posiciona todo o conteudo presente nessa coluna dentro do display grid do site todo dizendo que vai ficar entre as coluna 2 e 4. */
+  width: 100%;
+  /* quer que essa sessão também responda junto a coluna */
+  box-sizing: border-box;
+  /* Tem que colocar isso para a coluna acumular o espaço que ele coloca de padding abaixo */
+  padding: 10 px;
+  /* esse padding separa o conteúdo da ponta da coluna onde ele está */
+  display: grid;
+  /* Dentro da coluna ele criou outro grid para "arrumar" o conteúdo */
+  grid-template-columns: 120px 300px 1fr;
+  /* Croiu três colunas da esquerda para direita 100px a outra 300 px e a outra 1fr. A primeira coluna para título a segunda para os animais e a terceira para o texto*/
+  grid-gap: 20px;
+  /* para separar entre si as três colunas de grid que ele criou só dentro dessa parte  */
+  margin-top: 4 rem;
+  /* para afastar do topo td esse conteúdo da coluna 2 geral do site*/
+}
+
+.titulo {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 6rem;
+  line-height: 1;
+  /* dá um espaço entre as linhas */
+  font-weight: 400;
+  margin-bottom: 1rem;
+  grid-column: 1 / 4;
+}
+
+.animais p {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  /* dá um espaço entre as linhas */
+  margin: 1rem;
+  /* dá margem */
+}
+
+.animais h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  /* para ficar respondendo já que está em porcentagem */
+  text-transform: uppercase;
+  /* para ficar tudo maiusculo */
+  letter-spacing: 0.1em;
+  /* para dar espaço entre as letras */
+  margin-bottom: 1rem;
+  /* para separar o paragrafo do titulo h2 */
+  color: #e54;
+}
+
+.animais h2::before {
+  /* quando coloca assim ele cria logo acima um espaço e vc pode personalizar */
+  content: "";
+  /* exigido pq usou before mas ele pode ficar vazio  */
+  display: inline-block;
+  /* para que fique na mesma linha */
+  width: 40px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #fb5;
+}
+
+.animais-lista {
+  /* pegou o que ele queria transformar na barra de imagens nocaso a lista de imagens */
+  height: 370px;
+  overflow-y: scroll;
+  /* isso diz que o que for além do eixo y vc quer que ele crie um scrool */
+  grid-column: 2;
+  /* levou para a segunda coluna a de 300px */
+}
+
+.animais-lista::-webkit-scrollbar {
+  /* esse carnaval todo é só para estilizar a barra do scrool com tamanho */
+  width: 18px;
+}
+.animais-lista::-webkit-scrollbar-thumb {
+  background: #fb5;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+  /* é o retangulo que contém o quadrado que desce */
+}
+
+.animais-lista::-webkit-scrollbar-track {
+  background: #faf6ed;
+  /* é o quadrado da barra de scrool */
+}
+
+.animais-descricao section {
+  margin-bottom: 3rem;
+  /* para separar os blocos de texto */
+}
+
+.faq-lista {
+  grid-column: 2 / 4;
+}
+
+.faq-lista dt {
+  font-family: monospace;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  /* da espaço entre as linhas */
+}
+
+.faq-lista dt::before {
+  content: "";
+  display: inline-block;
+  /* para ficar paradinho na mesma linha */
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #fb5;
+}
+
+.faq-lista dd {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0.5rem;
+  margin-left: 30px;
+}
+
+.mapa {
+  /* coloca ele na mesma coluna dos animais */
+  grid-column: 2;
+}
+
+.dados {
+  grid-column: 3;
+}
+
+.dados li {
+  margin-bottom: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dados li::before {
+  content: "";
+  display: inline-block;
+  /* para ficar paradinho na mesma linha */
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #fb5;
+}
+
+.copy {
+  grid-column: 3 / 5;
+  margin-bottom: 2rem;
+  background-color: #fb5;
+}
+
+.copy p {
+  padding: 20 px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* Ele disse que para o site ficar respondendo esse media resolve */
+@media (max-width: 700px) {
+  /* dentro do parentese vai mais ou mens onde o site começa a "quebrar" */
+  body {
+    grid-template-columns: 1fr;
+  }
+  /* esses itens abaixo são aqueles que estão dentro do body */
+  .menu,
+  .grid-section,
+  .copy {
+    grid-column: 1;
+    /* vc tem tds esses elementos na unica coluna do body mas mantendo suas posições lá do grid inicial gerador */
+  }
+  .grid-section {
+    grid-template-columns: 100px, 1fr;
+    grid-gap: 10px;
+  }
+  .animais-lista {
+    grid-column: 1;
+  }
+  .faq-lista,
+  .dados,
+  .mapa {
+    grid-column: 1 / 3;
+  }
+  .grid-section h1 {
+    font-size: 3rem;
+  }
+  .menu {
+    margin-top: 0px;
+    /* disse que ficava feio e tirou a margem */
+  }
+  .copy {
+    margin-bottom: 0px;
+    /* disse que ficava feio e tirou a margem */
+  }
+}

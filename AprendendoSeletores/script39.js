@@ -133,13 +133,72 @@
 
 //Mostre no console kd paragrafo do site:
 //Mostre o texto dos parágrafos:
-const paragrafos = document.getElementsByTagName("p");
-//console.log(paragrafos); ou
-const paragrafostemQueTerOutroNomeParaTransformar = Array.from(paragrafos);
-paragrafostemQueTerOutroNomeParaTransformar.forEach(function (item) {
-  console.log(item);
-});
-paragrafostemQueTerOutroNomeParaTransformar.forEach(function (item) {
-  console.log(item.innerText);
-});
+// const paragrafos = document.getElementsByTagName("p");
+// //console.log(paragrafos); ou
+// const paragrafostemQueTerOutroNomeParaTransformar = Array.from(paragrafos);
+// paragrafostemQueTerOutroNomeParaTransformar.forEach(function (item) {
+//   console.log(item);
+// });
+// paragrafostemQueTerOutroNomeParaTransformar.forEach(function (item) {
+//   console.log(item.innerText);
+//});
 //O innertext é uma propriedade padrão que podemos usar para exibir o texto.
+
+//Para fazer operações com a classe toda dá para fazer como propriedade, não esquecendo que só da para fazer isso com node se for html list tem que transformar.
+
+// const menu = document.querySelectorAll('.menu');
+// const menu2= Array.from(menu);
+// //console.log(menu); //escrevendo para exibir vc evita bug.
+
+// menu2.forEach(function(item) {
+//   console.log(item);
+//   }); Não faz sentido fazer for each se vc só selecionou um elemento -o primeiro
+
+// const menu = document.querySelector('.menu');
+// menu.className; //retorna uma string
+// console.log(menu.classList); //chama as classes e exibe
+// console.log(menu.className); //retorna uma string com a lista de classes
+// console.log(menu.classList[0]);//como é array like pode pedir para ele exibir assim- caso ponha 2 que seria a segunda classe ele dá undefined pq só tem uma.
+// //Sendo um objeto com várias propriedades vc põe . e segue o baile. Na hora de fazer operações não usa console.log escreve direto pq ele não aceita.
+
+// menu.classList.add ('ativo');
+// //Pode inclusive criar funções
+// if(menu.classList.contains('azul')) {
+//   menu.classList.add ('possui-azul');
+// } else {
+//   menu.classList.add('nao-possui-azul');
+// }
+
+// menu.classList.add ('ativo'); //Adiciona a classe
+// menu.classList.add('ativo', 'mobile'); //... dessa vez duas não esquece da ,
+// menu.classList.remove('ativo'); //remove a classe
+// menu.classList.toggle('ativo'); //faz o oposto ou cria ou remove a classe
+// //menu.classList.contains('ativo'); //diz se tem ou não
+// menu.classList.replace('ativo', 'inativo'); //troca a primeira pela segunda
+
+//Por mais estranho que parece vc pode mudar o valor atribuido a uma certa propriedade
+// //menu.className = '22' ao habilitar esse comando ele sai da classe menu e vai para a 22 pq agora o class name do menu é 22
+// //menu.className += 'vermelho'; é o mesmo que menu.className = menu.className + ' vermelho';
+
+// const animais = document.querySelector('.animais');
+// console.log(animais.attributes);
+// console.log(animais.attributes[1]);
+// //namedNode map é outro tipo de item parece mais com o objeto do que com array mas é array like
+// //caso vc tente passar o atributo data-texto não vai conseguir pq ele não aceita hífen-vc sai disso:
+//console.log(animais.attributes.data-texto);
+//para isso:
+//console.log(animais.attributes['data-texto']);
+//ou:
+//console.log(animais.attributes[2]);
+
+//O get atribute e o setatributte são métodos(funções) que retornam ou definem de acordo com o atributo selecionado. é para mexer dentro dos atributos da classe ou id selecionada.
+const img = document.querySelector("img");
+console.log(img); //ipc vc confirmar se selecionou certo
+console.log(img.getAttribute("src")); //coloco ali o atributo que eu quero ver
+console.log(img.hasAttribute("id"));
+img.setAttribute("alt", "Texto Alternativo"); //Troca o texto do alt e tbm adiciona caso não tenha nada-não vê se tem no html então cuidado
+img.hasAttribute("id"); //diz se tem ou não o tributo do parenteses
+img.removeAttribute("alt"); //remove
+//img.hasAttributes(o que quer saber); //diz se tem ou não
+const possuiAlt = img.hasAttribute("alt");
+console.log(possuiAlt);
