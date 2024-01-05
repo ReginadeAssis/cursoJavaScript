@@ -192,13 +192,65 @@
 //console.log(animais.attributes[2]);
 
 //O get atribute e o setatributte são métodos(funções) que retornam ou definem de acordo com o atributo selecionado. é para mexer dentro dos atributos da classe ou id selecionada.
-const img = document.querySelector("img");
-console.log(img); //ipc vc confirmar se selecionou certo
-console.log(img.getAttribute("src")); //coloco ali o atributo que eu quero ver
-console.log(img.hasAttribute("id"));
-img.setAttribute("alt", "Texto Alternativo"); //Troca o texto do alt e tbm adiciona caso não tenha nada-não vê se tem no html então cuidado
-img.hasAttribute("id"); //diz se tem ou não o tributo do parenteses
-img.removeAttribute("alt"); //remove
-//img.hasAttributes(o que quer saber); //diz se tem ou não
-const possuiAlt = img.hasAttribute("alt");
-console.log(possuiAlt);
+// const img = document.querySelector("img");
+// console.log(img); //ipc vc confirmar se selecionou certo
+// console.log(img.getAttribute("src")); //coloco ali o atributo que eu quero ver
+// console.log(img.hasAttribute("id"));
+// img.setAttribute("alt", "Texto Alternativo"); //Troca o texto do alt e tbm adiciona caso não tenha nada-não vê se tem no html então cuidado
+// img.hasAttribute("id"); //diz se tem ou não o tributo do parenteses
+// img.removeAttribute("alt"); //remove
+// //img.hasAttributes(o que quer saber); //diz se tem ou não
+// const possuiAlt = img.hasAttribute("alt");
+// console.log(possuiAlt);
+// //Ele cria um objeto que exibe o atributo que ele quer mostrar
+
+//Existem algumas propriedade que só podem ser lidas chama read only. Ele dá como exemplo o classname e o attributes que são propriedades do objeto animal.
+// const animais = document.querySelector('.animais');
+// console.log (animais.className); //vc coloca o console justamente pq quer ver a string com o nome das classes
+// animais.className = 'azul'; propriedade vindo definida por padrão vc pode mudar o valor dela objeto.propriedade = ' novo valor'
+// console.log (animais.className); //o .classname= substitui td a string do class name de cima
+// animais.className += ' vermelho'; //adiciona o vermelho na string dps pedi para exibir. Para incluir o azul separado do vermelho o espaço vai dentro do '.
+// console.log (animais.className);
+// animais.attributes = 'class="ativo"'; //não funciona é read only ele demonstra isso aqui pq em teoria mesmo a propriedade vindo definida por padrão vc pode mudar o valor dela objeto.propriedade = ' novo valor'
+
+// const carro = {
+//   portas: 4,
+//   andar: function (km){
+//     console.log(`Carro andou ${km}`);
+//   }
+// }
+// console.log(carro); //vem td que está no carro
+// console.log(carro.andar);//exibe a propriedade andar do objeto
+// console.log(carro.andar(32));
+// console.log(carro.portas);
+// carro.portas = 20;
+// console.log(carro.portas);
+// //é possivel transformar uma propriedade que não é só leitura em só leitura
+
+// //Adicione a classe ativo a tds os itens do menu
+// const menui = document.querySelectorAll(".menu a"); //eu quero que ele vá lá no menu e fale com tds os a.
+// console.log(menui);
+// //menui.className += ' vermelho';// está errado pq tem que usar o for each
+// menui.forEach((item) => {
+//   item.classList.add("ativo");
+// });
+// //Para saber se deu certo abre cada uma a e vc verá a classe.
+
+// //Remove a classe ativo de todos os itens do menu e mantém apenas no primeiro
+// //vc remove td entra no itens menu que é uma array fala com o zero e coloca a classe ativo nele.
+// menui.forEach((item) => {
+//   item.classList.remove("ativo");
+// });
+// menui[0].classList.add("ativo");
+// //Verifica se as imagens possuem o tributo alt
+// const img = document.querySelectorAll("img");
+// img.forEach((img) => {
+//   const possuiAtributo = img.hasAttribute("alt");
+//   console.log(possuiAtributo);
+// });
+// //Modifique o href do link externo no menu
+// //para modificar o atributo usa o set o primeiro valor que vc passa é o que vc quer modificar e o segundo é o novo valor que eu quero dar.
+// const link = document.querySelector('a[href^="http"]');
+// link.setAttribute("href", "https://www.google.com/");
+// console.log(link);
+// 0305;
