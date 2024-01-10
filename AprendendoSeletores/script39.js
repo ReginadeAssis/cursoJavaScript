@@ -254,3 +254,61 @@
 // link.setAttribute("href", "https://www.google.com/");
 // console.log(link);
 // 0305;
+
+//Nessa parte de posicionamento é importante pegar a altura e largura dos elementos pq só dps vc consegue alterar e deixar como vc quer. Abaixo estão as propriedades de element e html element a maioria só leitura(ready only).
+
+// const section = document.querySelector(".animais");
+// console.log(section.clientHeight); //exibe a altura e o padding
+// console.log(section.offsetHeight); //height, padding e border
+// console.log(section.scrollHeight); //height total mesmo dentro do scrool
+// //Para a largura o mesmo com width na propriedade
+// console.log(section.clientWidth); //exibe a altura e o padding
+// console.log(section.offsetWidth); //height, padding e border
+// console.log(section.scrollWidth); //height total mesmo dentro do scrool
+// //exemplo da distancia entre o topo do elemento e o topo da pagina:
+// console.log(section.offsetTop);
+// //exemplo da distancia entre o topo esquerdo do elemento e o topo da pagina:
+// console.log(section.offsetLeft);
+// A propriedade getboundingcleintrect retorna algumas distancias
+// const usando = document.querySelector(".animais");
+// const h = usando.getBoundingClientRect(); //É como se ele criasse um retangulo e calculado os tamanhos
+// console.log(h);
+// if (h.top < 0) {
+//   console.log("passou do elemento");
+// } //usou propriedade para criar condicionais e fazer comunicados
+// // vc está esquecendo que pode pedir para ele exibir vários:
+// console.log(
+//   window.innerWidth, //diz a largura
+//   window.outerWidth, //diz a altura da janela, soma a barra de endereço
+//   window.pageXOffset, //quanto desceu a pag no eixo x e a outra no y
+//   window.pageYOffset //vc desce/sobe e atualiza que ele calcula
+// );
+// //Outro exemplo que dessa vez verifica se a tela do usuario é menor que 600px
+// if (window.innerWidth < 600) {
+//   console.log("Tela pequena");
+// }
+// //para ver se a largura se adequa usa esse media querry
+// const small = window.matchMedia("max-width:600px");
+// if (small.matches) {
+//   console.log("tela menor");
+// } else {
+//   console.log("tela maior");
+// }
+// //esse match é uma propriedade
+// console.log(small); // é um objjeto conforme vc modifica o tamanho da tela esse objeto small vai de true p false e vice versa
+
+// // Verifique a distância da primeira imagem
+// // em relação ao topo da página:
+// const primeiraImagem = document.querySelector("#teste li a");
+// console.log(primeiraImagem);
+// const topo = primeiraImagem.offsetTop;
+// console.log(topo);
+// // Retorne a soma da largura de todas as imagens-o offset width conta o tamanho da borda tbm. Se vc não dá tamanho fixo para imagem ele só sabe o tamanho dps da imagem. Para que o java espere vc add propriedade como função de callback que segura td p isso não dar erro. Assim ele só ativa o somaimagem dentro do onload. soma = 0 mais o offset width do primeiro item no proximo a variavel soma já mudou e tem valor atualizado.
+// //frogge
+
+// // Verifique se os links da página possuem o mínimo recomendado para telas utilizadas com o dedo. (48px/48px de acordo com o google)
+
+// // Se o browser for menor que 720px,para isso usa o media querry
+// // adicione a classe menu-mobile ao menu. Usa o media querry cria uma seleção do primeiro item do menu e dps com a propriedade do objeto cria a classe
+
+//0306
