@@ -304,11 +304,37 @@
 // const topo = primeiraImagem.offsetTop;
 // console.log(topo);
 // // Retorne a soma da largura de todas as imagens-o offset width conta o tamanho da borda tbm. Se vc não dá tamanho fixo para imagem ele só sabe o tamanho dps da imagem. Para que o java espere vc add propriedade como função de callback que segura td p isso não dar erro. Assim ele só ativa o somaimagem dentro do onload. soma = 0 mais o offset width do primeiro item no proximo a variavel soma já mudou e tem valor atualizado.
-// //frogge
+// //frogge- jogo para aprender posicionamento
+// function somaImagens() {
+//   const imagens = document.querySelectorAll("img");
+//   let soma = 0 //cria uma variável para fazer a soma
+//   imagens.forEach((imagem) => {
+//     soma = soma + imagem.offsetWidth;
+//     //=soma += imagem.offsetwidth;
+//     //console.log(imagem.offsetWidth);
+//   });
+//   console.log(soma);
+// }
+// window.onload = function () {
+//   //aqui vai o código que vc quer q funcione só dps de td carregar
+//   somaImagens();
+// };
 
 // // Verifique se os links da página possuem o mínimo recomendado para telas utilizadas com o dedo. (48px/48px de acordo com o google)
+// const links = document.querySelectorAll('a');
+// console.log(links);
+// links.forEach((link) => {
+//   if (links.offsetWidth && links.offsetHeight >= 48) {console.log('possui');
+// } else {
+//   console.log('não possui');
+// }
+// })
 
 // // Se o browser for menor que 720px,para isso usa o media querry
 // // adicione a classe menu-mobile ao menu. Usa o media querry cria uma seleção do primeiro item do menu e dps com a propriedade do objeto cria a classe
-
-//0306
+// const browserSmall = window.matchMedia("(max-width: 720px)").matches; //até 720 ele dá verdadeiro
+// if (browserSmall) {
+//   const menu = document.querySelector(".menu");
+//   menu.classList.add("menu-mobile");
+// }
+//0307
