@@ -337,4 +337,46 @@
 //   const menu = document.querySelector(".menu");
 //   menu.classList.add("menu-mobile");
 // }
+
+//Eventos são ótimos para gerar movimentação na página
+//A estrutura é elemntoque selecionou.addEventListener('evento', nome da função que está fora ou function anonima o que quer() {;}, terceiro parâmetro). Tem algumas já prontas e o legal é que vc pode criar a função sobre e dps colocar só o nome. O terceiro é opcional
+//Para começar vc seleciona o que quer add o evento
+//const img = document.querySelector('img');
+//img.addEventListener('click', function () {console.log('oi');});
+//Pode tbm sempre usar a arrow function
+//img.addeventListener('click', () => {;});
+//Cuidado! não pode add a função ativando ou seja com os () quando vc cria ela fora:
+//img.addEventListener('click', clique()); assim não pode
+//Assim pode:
+// const img = document.querySelector('img');
+// function oi () {
+//   console.log('oi');
+// }
+// img.addEventListener('click', oi);
+//e como arrow function tbm pode:
+// const img = document.querySelector('img');
+// img.addEventListener('click', () => {console.log('opção menor');});
+
 //0307
+//O addevent listener se aplica a um único elemento, logo se c quiser aplicar em vários tem que fazer um loop desse evento dentro da lista. Eu crio primeiro a função e dps faço um for each do que eu criei.
+// //selecione tds as imagens:
+// const imgs = document.querySelectorAll("img");
+// //cria a função que vc quer
+// //A estrutura é elemento que selecionou.addEventListener('evento', nome da função que está fora ou function anonima o que quer() {;}, terceiro parâmetro).
+// function clicar(event) {
+//   console.log('azul');
+// }
+// //crie um loop com a função-denntro do for each que vai o addevent listener!!
+// imgs.forEach((img) => {
+//   img.addEventListener('click', clicar);
+// });
+
+// Quando o usuário clicar nos links internos do site,adicione a classe ativo ao item clicado e remova dos demais itens caso eles possuam a mesma. Previna  o comportamento padrão desses links
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site.
