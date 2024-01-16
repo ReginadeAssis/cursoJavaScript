@@ -357,7 +357,6 @@
 // const img = document.querySelector('img');
 // img.addEventListener('click', () => {console.log('opção menor');});
 
-//0307
 //O addevent listener se aplica a um único elemento, logo se c quiser aplicar em vários tem que fazer um loop desse evento dentro da lista. Eu crio primeiro a função e dps faço um for each do que eu criei.
 // //selecione tds as imagens:
 // const imgs = document.querySelectorAll("img");
@@ -371,12 +370,42 @@
 //   img.addEventListener('click', clicar);
 // });
 
-// Quando o usuário clicar nos links internos do site,adicione a classe ativo ao item clicado e remova dos demais itens caso eles possuam a mesma. Previna  o comportamento padrão desses links
+// Quando o usuário clicar nos links internos do site,adicione a classe ativo ao item clicado e remova dos demais itens caso eles possuam a mesma. Previna  o comportamento padrão desses links (o comportamento padrão é que quando vc clica no link ele vai para outro de igual id)
+// const linkInternos = document.querySelectorAll('a[href^="#"]');
+// console.log(linkInternos);
+// function handleLink(event) {
+//   event.preventDefault();
+//   event.currentTarget.classList.add("ativo");
+// //poderia ser this.classList.add("ativo");
+// }
+// linkInternos.forEach((link) => {
+//   link.addEventListener("click", handleLink);
+// link.classList.remove('ativo');
+// });
 
-// Selecione todos os elementos do site começando a partir do body,
-// ao clique mostre exatamente quais elementos estão sendo clicados
+// Selecione todos os elementos do site começando a partir do body, ao clique mostre exatamente quais elementos estão sendo clicados.
+// const todos = document.querySelectorAll('body *');//o * aqui e no css seleciona tds os elementos. Para começar de algo digita o que vc quer q dê início e o * dps
+// function handleElemento (event) {
+//   console.log(event.currentTarget); //o current target é o elemento que está sendo clicado-o que está selecionado
+// }
+// todos.forEach((elemento)=>{
+//   elemento.addEventListener('click', handleElemento);
+// });//como quer q vá para tds usa for each
 
-// Utilizando o código anterior, ao invés de mostrar no console,
-// remova o elemento que está sendo clicado, o método remove() remove um elemento
+// Utilizando o código anterior, ao invés de mostrar no console, remova o elemento que está sendo clicado, o método remove() remove um elemento
 
-// Se o usuário clicar na tecla (t), aumente todo o texto do site.
+// const todos = document.querySelectorAll('body *');
+// function handleElemento (event) {
+//   event.currentTarget.remove();
+// }
+// todos.forEach((elemento)=>{
+//   elemento.addEventListener('click', handleElemento);
+// });//como quer q vá para tds usa for each
+// Se o usuário clicar na tecla (t), aumente todo o texto do site
+// function aumentar(event) {
+//   if (event.key === "t") {
+//     document.documentElement.classList.toggle("textomaior");
+//     //document fala com o body o docelement fala com o body
+//   }
+// }
+// window.addEventListener("keydown", aumentar);

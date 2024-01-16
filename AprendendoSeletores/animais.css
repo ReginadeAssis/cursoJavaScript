@@ -50,15 +50,21 @@ body {
   flex-wrap: wrap;
   /* Diz para item quebrar caso não dê no site */
   padding: 10px;
+  margin-right: 10px;
+}
+
+html.textomaior {
+  font-size: 150%;
 }
 
 /* E segue destemidamente para cada item do menu, ou seja dentro do menu e dentro da lista a palavra em si. */
-.menu li {
+
+.menu li a {
   display: block;
   /* Só os nomes viraram display block */
-  padding: 10 px;
+  padding: 10px;
   /* Para tirar das bordas */
-  margin-right: 10px;
+  /* margin-right: 10px; foi para ul*/
   color: #222;
   text-decoration: none;
   /* Esse tira o sublinhado */
@@ -66,8 +72,8 @@ body {
   font-weight: bold;
   text-decoration: uppercase;
   /* Para o nome ficar em maiuscula */
-  font-size: 0.875 rem;
-  letter-spacing: 0.1 rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.1rem;
   /* Literalmente cada letrinha */
 }
 
