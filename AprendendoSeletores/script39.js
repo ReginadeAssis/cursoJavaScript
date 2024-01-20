@@ -409,3 +409,49 @@
 //   }
 // }
 // window.addEventListener("keydown", aumentar);
+
+//Dá para osar outras propriedades do html tbm
+//nome que eu dei.innerText = 'o novo valor' eu mudo o que está dentro do html como se a propriedade fosse uma variavel
+//o html que ele fala é td a parte do código em html não http-eita soninho
+// outro exemplo nomequeeudei.innerHTML = 'novo valor'
+
+// const menu = document.querySelectorAll('.menu');
+// menu.otherHTML = 'doideira';
+// //menu.otherHtml -envolve td o html do elemento incluindo ele mesmo.
+// //menu.innerHTML -envolve só o que está dentro(filhos)
+// //menu.innerText - envolve só o texto que está no html
+
+// console.log(menu.otherHTML);
+
+// const h1 = document.querySelector('h1');
+// console.log(h1.innerHTML);
+// h1.innerHTML = '<p>Mudou</p>'; //observe que muda o estilo tbm pq ele vai catar de p
+// console.log(h1.innerHTML);
+// //O otherhtmlsubstitui o inner troca o conteúdo
+// h1.outerHTML = '<p>Troca</p>';
+// console.log(h1.outerHTML);
+
+//Transversing é uma navegação entre os itens pais e filhos-pelo dom. A ideia é pegar o elemento ou o pai ou seja lá qual for o lugar
+//O html colection do elemento é uma lista no formato html que vc acessa como se fosse um array-Para pegar o ultimo elemento nomequeeudeiparaaseleção.children.lenght -1 pq a contagem começa do zero ou -1 na frente de td
+//Tbm poderia selecionar como elemento css lista.querrySelector('li:last-child');
+
+// const lista = document.querySelector('.animais-lista');
+// //abaixo estão as opções levando em consideração o formato já que se trata de propriedades
+// console.log(lista.parentElement);
+// //lista.parentElement vem o pai
+// //lista.parentElement.parentElement vem o pai do pai
+// //lista.previousElementSibling vem o que está acima
+// //lista.nextElementSibling vem o que está dps
+// //lista.children vem o html colection(lista) com os filhos
+// //lista.children[0] vem o primeiro filho
+// //lista.children[--lista.children.length]
+
+// //Td tag html é um elemento mas um node pode ser qualquer coisa - por isso lidamos com ele de forma diferente até mesmo o espaço entre as linhas. Quando vc puxa a setinha ele mostra tds os itens até mesmo o espaço.
+// const lista = document.querySelector('.animais-lista');'
+// console.log(lista.childNodes);//vem td
+// console.log(lista.previousSibling);//caso eu não ponha o .element antes do sibling ele traz a node list tbm na vdd um espaço que é o que vem antes dessa lista
+// //Cuidado!
+// //lista.ElementSibling -elemento antes
+// //lista.previousSibling -node antes
+// //lista.firstchild -primeiro node child
+// //lista.childNodes //tds os node child
