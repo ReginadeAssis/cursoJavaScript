@@ -455,3 +455,18 @@
 // //lista.previousSibling -node antes
 // //lista.firstchild -primeiro node child
 // //lista.childNodes //tds os node child
+
+//0308
+//1)Selecione contato
+//2)Selecione titulo
+//3)Mova o titulo de contato para a lista
+//4)Mova para animais
+//5)Remova o título
+//6) Substitua o titulo pela lista
+//7) crie com java um novo elemento no h1 e dps posicione
+//8)crie 3 variaveis com valor igual
+//9) Crie uma variável clonando e os filhos do elemento
+//Duplique o menu e adicione ele em copy
+//Selecione o primeiro DT da dl de FAQ
+//Selecione o dd referente ao primeiro dt
+//Substitua o conteudo html de faq pelo de .animais
