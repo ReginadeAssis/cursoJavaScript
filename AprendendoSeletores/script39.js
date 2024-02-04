@@ -444,11 +444,11 @@
 // //lista.nextElementSibling vem o que está dps
 // //lista.children vem o html colection(lista) com os filhos
 // //lista.children[0] vem o primeiro filho
-// //lista.children[--lista.children.length]
+// //lista.children[--lista.children.length]  -> vem o último item da listacom o -- decremento na frente
 
-// //Td tag html é um elemento mas um node pode ser qualquer coisa - por isso lidamos com ele de forma diferente até mesmo o espaço entre as linhas. Quando vc puxa a setinha ele mostra tds os itens até mesmo o espaço.
+// //Td tag html é um elemento, já um node pode ser qualquer coisa - por isso lidamos com ele de forma diferente até mesmo o espaço entre as linhas. Quando vc puxa a setinha ele mostra tds os itens até mesmo o espaço.
 // const lista = document.querySelector('.animais-lista');'
-// console.log(lista.childNodes);//vem td
+// console.log(lista.childNodes);//vem td mesmo a lista só tendo 6 itens
 // console.log(lista.previousSibling);//caso eu não ponha o .element antes do sibling ele traz a node list tbm na vdd um espaço que é o que vem antes dessa lista
 // //Cuidado!
 // //lista.ElementSibling -elemento antes
@@ -456,17 +456,69 @@
 // //lista.firstchild -primeiro node child
 // //lista.childNodes //tds os node child
 
-//0308
-//1)Selecione contato
-//2)Selecione titulo
-//3)Mova o titulo de contato para a lista
-//4)Mova para animais
-//5)Remova o título
-//6) Substitua o titulo pela lista
-//7) crie com java um novo elemento no h1 e dps posicione
-//8)crie 3 variaveis com valor igual
-//9) Crie uma variável clonando e os filhos do elemento
+// const menu = document.querySelector('.menu');
+// menu.outerHTML; // todo o html do elemento
+// menu.innerHTML; // html interno
+// menu.innerText; // texto, sem tags
+// menu.innerText = '<p>Texto</p>'; // a tag vai como texto
+// menu.innerHTML = '<p>Texto</p>'; // a tag é renderizada
+//Abaixo do cuidado temos propriedades que retornam uma string contendo o html ou o texto e trocar o valor delas. É como modificar a propriedade usa = pq é propriedade.
+
+// //Mais exemplos:
+// const h1 = document.querySelector('h1');
+// console.log(h1.innerHTML); //vem só o texto
+// h1.innerHTML= '<p>Teste</p>'//mudando o valor tem que passar uma string sai animais fantasticos e entra teste
+// //se fosse h1.outerHTML ele trocaria tudo inclusive o que envolve o conteúdo.
+// const animaisLista = document.querySelector('.animais-lista');
+// console.log(animaisLista.innerHTML); //vem td html com os list
+// console.log(animaisLista.innerText); //viria só o texto mas como não tem ele retorna só os espaços
+
+// const animaisDescricao = document.querySelector('.animais-descricao');
+// console.log(animaisDescricao);
+// console.log(animaisDescricao.innerHTML);
+// console.log(animaisDescricao.innerText);
+
+// const lista = document.querySelector('.animais-lista'); //selecionou a lista
+// const contato = document.querySelector('.contato');//selecionou o contato
+// const titulo = contato.querySelector('.titulo');//selecionou o titulo dentro de contato
+
+//lista.appendChild(titulo); // move o que vc quer movimentar dentro do parentese para o final do elemento que vc solicitou a propriedade no caso lista.
+//contato.insertBefore(animais, titulo); // insere td parte animais antes de titulo que é na vdd o contato-move td a lista de animais para acima de onde estava o titulo. Importante destacar que titulo tem que ser filho de contato
+// contato.removeChild(titulo); // remove titulo de contato
+// const mapa = document.querySelector('.mapa');
+// contato.replaceChild(mapa, titulo); // substitui titulo pelo mapa. primeiro o q vc quer usar para substiruir dps o q será substituido.
+//Lembrar sempre que é o elemento pai que eu quero . a propriedade que eu quero chamar
+//Tbm dá para criar um elemento pelo java script "por fora"
+// const animais = document.querySelector('.animais'); //primeiro pegou a parte p onde vai
+// const novoH1 = document.createElement('h1'); //criou um elemento novo chamado novoH1 que é um h1
+// novoH1.innerText = 'Novo Título'; //pegou a propriedade innertext de h1 já criado e atribuiu um texto
+// novoH1.classList.add('titulo'); //usou a mesma lógica agr para criar uma classe
+// //Por fim, é preciso pegar esse novoH1 e inserir no corpo do html
+// animais.appendChild(novoH1); //chamou o elemento . a propriedade e chamou o que estava criado
+
+//Cuidado para não acabar clonando elementos:
+// const titulo = document.querrySelector('h1');
+// //const titulo2 = document.querrySelector('h1');
+// //const novoTitulo = titulo;
+// //titulo é igual ao titulo 2 e como novo titulo pega titulo na vdd é td igual
+// //Para clonar propositalmente:
+// const cloneTitulo = titulo.cloneNode(true); // com o true no parentese clona o titulo e os filhos dele-caso false só clona a tag que envolve
+//A proposta é duplicar o h1 e colocar ele acima de faq:
+// const h1 = document.querySelector('h1'); //primeiro seleciona o q vc quer clonar
+// const faq = document.querySelector('.faq'); //Dps seleciona para onde vc quer mandar o elemento clonado
+// const cloneH1 = h1.cloneNode(true); //Isso pega o h1 usa a propriedade dele de clonar e clona
+// faq.appendChild(cloneH1); //move o clone de h1
 //Duplique o menu e adicione ele em copy
-//Selecione o primeiro DT da dl de FAQ
-//Selecione o dd referente ao primeiro dt
-//Substitua o conteudo html de faq pelo de .animais
+// const menu = querySelector('.menu');
+// const copy = querySelector('.copy');
+// const menuDuplicado = menu.cloneNode(true);
+// copy.appendChild(menuDuplicado);
+// //Selecione o primeiro DT da dl de FAQ
+// const faq = document.querySelector('.faq');
+// const primeiroDT = document.querySelector('dt');
+// //Selecione o dd referente ao primeiro dt
+// const proximoDD = primeiroDT.nextElementSibling;
+//Substitua o conteudo html de faq pelo de .animais:
+// const faq = document.querySelector('.faq');
+// const animais = document.querySelector('.animais');
+// faq.innerHTML= animais.innerHTML;
