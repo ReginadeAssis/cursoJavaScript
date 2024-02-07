@@ -305,3 +305,25 @@ body {
     opacity: 1;
   }
 }
+.js .js-tabcontent section {
+  display: none; /*quer que quando na tabcontent na section ele suma com o conteúdo das outras. O outro .js na frente é para quem não está com o js ativado não ter problema .js .js-tabcontent section não funciona se lá no head não colocarmos uma tag script-olhar linha 9*/
+}
+.js-tabcontent section.ativo {
+  /*quando estiver com a classe ativo dentro da section dentro da tabcontent esse important é só para enfatizar*/
+  display: block !important;
+  animation: show 0.5s forwards;
+  /* chamou a animação que criou abaixo e chamou de show, o forwards é para ele ficar no estado final definido pelo to*/
+}
+@keyframes show {
+  /*está usando key frame q é animação e chamou de show*. em seguida ele diz que sai de opacidade 0 e vai para translate que é visível*/
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    /*move o conteúdo em 3 eixos sendo o 1 x segun y e terceiro z ai vc acomoda os valores de acordo com o eixo */
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  /* o from e o to é literalmente o de para ai vc configura como vc quer q ele faça isso.Assim anima saindo do -30 para zero e da opacidade de 0 para 1 */
+}

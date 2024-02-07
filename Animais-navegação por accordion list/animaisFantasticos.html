@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site</title>
   <link rel="stylesheet" href="./animais.css">
+  <script>
+    document.documentElement.className += ' js'//A propriedade classname que retorna tds as classes do item e vc pode passar classe nova só colocando o =. Só o igual daria problema pq substitui tds as outras classes por isso põe +=. Tem q colocar o espaço antes do ' e assim ele soma a classe já existente o js.
+    // document.documentElement.classList.add('js') poderia ser tbm mas não funciona em codigo antigo
+  </script>
 </head>
 
 <body>
-  <nav class="menu" id="teste">
+  <nav class="menu js-links" id="teste">
     <ul>
       <li><a href="#animais"></a> Animais</li>
       <li><a href="#faq"></a> Faq</li>
@@ -42,7 +46,7 @@
       </li>
     </ul>
     <!-- Na mesma section da imagem fica o texto que vai acompanhar elas e deu uma classe para o texto chamada animais-descricao. Sendo que cada um dos animais ganhou uma section -->
-    <div class="animais-descricao">
+    <div class="animais-descricao js-tabcontent">
       <section class="ativo">
         <!--  colocando a classe aqui resolve o problema de abrir e o site estar vazio -->
         <!-- Caso não tenha acesso ao html da página e precise fazer essa operação olhar o comentário no script linha 23-->
