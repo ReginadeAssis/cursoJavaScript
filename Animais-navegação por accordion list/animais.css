@@ -272,34 +272,33 @@ body {
 }
 
 .js-accordion dd {
-  display: none; 
+  display: none;
   /* para não aparecer dd */
 }
 
 .js-accordion dt::after {
   /* dps de dt coloca o q vc quiser no caso a seta*/
-  content: 'Clique aqui';
+  content: "Clique aqui";
   margin-left: 10px;
 }
 
 .js-accordion dt.ativo::after {
   /* dps de dt coloca o q vc quiser no caso a seta*/
-  content: 'Resposta';
+  content: "Resposta";
   margin-left: 10px;
 }
 
 .js-accordion dd.ativo {
   display: block;
   /* Para aparecer o dd */
-  animation: sliceDown .5s forwards;
+  animation: sliceDown 0.5s forwards;
   /* add a animação que criou abaixo, .5s dura 5 segundos e forwards volta para estado final */
 }
 
 @keyframes sliceDown {
   /* criou animação para aparecimento e desaparecimento */
-  from{
+  from {
     opacity: 0;
-
   }
   to {
     opacity: 1;
@@ -326,4 +325,17 @@ body {
     transform: translate3d(0, 0, 0);
   }
   /* o from e o to é literalmente o de para ai vc configura como vc quer q ele faça isso.Assim anima saindo do -30 para zero e da opacidade de 0 para 1 */
+}
+
+.js .js-scroll {
+  opacity: 0; /* começa com zero ou seja o elemento não aparece*/
+  transform: translate3d(-30px, 0, 0);
+}
+
+.js .js-scroll.ativo2 {
+  opacity: 1;
+  /* elemento aparece */
+  transition: 0.3s;
+  transform: translate3d(-30px, 0, 0);
+  /* Para ele animar a entarda e a saida */
 }

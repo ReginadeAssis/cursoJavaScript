@@ -56,23 +56,50 @@ um(); //isolou nessa funçção para não dar problema no código
 
 //entrou no developer.mozilla para colocar o scrool suave como link interno
 //Para começar selecionou os links que queria add o efeito atribuindo a classe js-menu que dps no estilo vai receber o conteúdo. A adição da classe nos elementos fica por conta do addevent de um foreach e do uso da propriedade addclass
-function initScroolSuave () {
-const linksInternos = document.querySelectorAll('.js-links a[href^="#"] '); //o que começar com ess # é link interno
-function scrollToSection(event) {
-  event.preventDefault(); //só para anular o padrão
-  const href = event.currentTarget.getAttribute('href'); //criou constante p pegar o link
-  const section = document.querySelector(href);
-  const topo = section.offsetTop; //coloca esse offset aqui para ele não descer sem parada
-  windows.scrollTo(0, topo);//os 3 eixos de movimentação hori, verti. Pode passar uma variável como ref para movimentação
-  windows.scrollTo({
-  top: topo,
-  behavior: 'smoth', //isso não tem em td navegador e é o que faz descer devagar
+function initScroolSuave() {
+  const linksInternos = document.querySelectorAll('.js-links a[href^="#"] '); //o que começar com ess # é link interno
+  function scrollToSection(event) {
+    event.preventDefault(); //só para anular o padrão
+    const href = event.currentTarget.getAttribute("href"); //criou constante p pegar o link
+    const section = document.querySelector(href);
+    const topo = section.offsetTop; //coloca esse offset aqui para ele não descer sem parada
+    windows.scrollTo(0, topo); //os 3 eixos de movimentação hori, verti. Pode passar uma variável como ref para movimentação
+    windows.scrollTo({
+      top: topo,
+      behavior: "smoth", //isso não tem em td navegador e é o que faz descer devagar
+    });
+    //ele dá mais opções de vc colocar objetos como opção tem a função scroolintoview
+  }
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
   });
-  //ele dá mais opções de vc colocar objetos como opção tem a função scroolintoview
 }
-linksInternos.forEach((link) => {
-  link.addEventListener("click", scrollToSection);
-});
-}
+initScroolSuave();
 
-initScroolSuave ();
+function doScroll() {
+  // Animação de sumir:
+  //Para animar cada parte é preciso selicionar a parte
+  const sections = document.querySelectorAll(".js-scroll"); //abaixo vê se sections existe e executa td
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.6;
+    //Acima seleciona a metade da tela para tirar do valor de ref do topo p não sumir com o conteúdo
+    //cria uma função que será ativada no momento que a pessoa ativar o scroll
+    function animaScroll() {
+      //Para animar tem q saber a distancia de cada elemento em relaçao ao topo
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top - windowMetade;
+        //esse metodo getbounding pega a distancia e com o .top especifica de onde-quando está menor que zero passou do topo
+        if (sectionTop < 0) {
+          //adiciona uma classe que vai fazer as alterações quando eu passsar peços titulos pq quando passa fica menor q zero a ref do elemento para o topo
+          section.classList.add("ativo2"); //css linha 331
+        } else {
+          section.classList.remove("ativo2"); //limpa a animação removendo a classe
+        }
+      });
+    }
+    //Agora para adicionar o evento de scroll a gente add o objeto window pq o scroll que vc dá no site é nele td
+    window.addEventListener("scroll", animaScroll);
+    animaScroll();
+  }
+}
+doScroll(); //agrupa td a função para evitar problema
