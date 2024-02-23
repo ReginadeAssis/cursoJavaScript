@@ -67,14 +67,79 @@
 // //Cuidado!! o nome do objeto para selecionar a propriedade é Dom.element().classList.add('teste)-exemplo se quisesse usar a propriedade class list
 //---------------------------------------------------------------------------------------------
 
-//Para que não gere problemas ao mudar o seletor usa as funções construtoras
+// //Para que não gere problemas ao mudar o seletor usa as funções construtoras
+// function Dom(seletor) {
+//   this.seletor = seletor; //agr ele pega o parametro que chama seletor e joga aqui
+//   this.element = function () {
+//     return document.querySelector(seletor); //um metodo que retorna esse objeto baseado na propriedade selector
+//   }
+//     this.ativo = function () {
+//       this.element().classList.add('ativo');
+//       //um metodo chamado ativo que add a classe ativo no elemento
+//     };
+// }
+// const li = new Dom(); //o li passa a ser o seletor e add a classe ativo se eu ativar esse metodo. è um objeto do tipo dom
+// li.seletor = 'li';
+// li.ativo();
+
+// const ul = new Dom();
+// ul.seletor = 'ul';
+// ul.ativo();
+
+//---------------------------------------//__________________________________________________
+// Transforme o objeto abaixo em uma Constructor Function
+// const pessoa = {
+//   nome: 'Nome pessoa',
+//   idade: 0,
+//   andar() {
+//     console.log(this.nome + ' andou');
+//   }
+// }
+
+// function Pessoa (nome, idade) {} //Paso 1 é transformar o objeto em uma função
+// function Pessoa (nome, idade) {this.nome = nome;} //Passo 2 é levar os argumentos a propriedade
+// function Pessoa (nome, idade) {
+//   this.nome = nome;
+//   this.idade = idade;}
+function Pessoa(nome, idade) {
+  this.nome = nome;
+  this.idade = idade;
+  this.andar = function () {
+    console.log(this.nome + "andou");
+  };
+} //Passo 3 adicionar o metodo andar
+
+// Crie 3 pessoas, João - 20 anos,
+// Maria - 25 anos, Bruno - 15 anos
+const joao = new Pessoa("João", 20);
+const maria = new Pessoa("Maria", 25);
+const bruno = new Pessoa("Bruno", 15);
+
+// Crie uma Constructor Function (Dom) para manipulação
+// de listas de elementos do dom. Deve conter as seguintes
+// propriedades e métodos:
+//
+// elements, retorna NodeList com os elementos selecionados
+// addClass(classe), adiciona a classe a todos os elementos
+// removeClass(classe), remove a classe a todos os elementos
+
+//priemro cria uma função
+//2  cria a constante que pega o seletor
+//3 joga dentro do seletor a propriedade que vc quer no caso a node list
+//4 cria uma propriedade que vai exibir o que definiu na constante
+//5 cria uma propriedade que vai adicionar a classe em tds os itens para isso tem que usar o for each
+
 function Dom(seletor) {
-  this.seletor = seletor; //agr ele pega o parametro que chama seletor e joga aqui
-  (this.element = function () {
-    return document.querySelector(this.selector); //um metodo que retorna esse objeto baseado na propriedade selector
-  }),
-    (this.ativo = function () {
-      this.element().classList.add("ativo"); //um metodo chamado ativo que add a classe ativo no elemento
+  const elementList = document.querySelectorAll(seletor);
+  this.elements = elementList;
+  this.addClass = function (classe) {
+    elementList.forEach((element) => {
+      element.classList.add(classe);
     });
+  };
+  this.removeClass = function (classe) {
+    elementList.forEach((element) => {
+      element.classList.remove(classe);
+    });
+  };
 }
-const li = new Dom("li"); //o li passa a ser o seletor e add a classe ativo se eu ativar esse metodo
