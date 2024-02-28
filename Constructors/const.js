@@ -143,3 +143,106 @@ function Dom(seletor) {
     });
   };
 }
+
+//____________________________________________//_______________________________________
+
+//O prototipo é uma propriedade de uma função graças a ele podemos usar as propriedades que já “vem com o js”
+function Pessoa(nome, idade) {
+  this.nome = nome;
+  this.idade = idade;
+  this.andar = function () {
+    return console.log("Andou");
+  };
+} //criou a função construtora
+const andre = new Pessoa("André", 28); // criou o novo objeto com a função construtora
+console.log(Pessoa.prototype); //objeto
+console.log(andre.prototype); //indef pq andre é um objeto novo e pessoa é a função. O prototype está só na função
+console.log(Pessoa.prototype);
+
+function teste(a) {
+  return a + 1;
+}
+console.log(teste(1));
+
+teste.prototype; //nesse ponto só tem uma propriedade o constructor e o proto
+typeof teste.prototype; //é um objeto
+
+//O curioso é que vc pode add métodos e propriedades a esses prototipes e não aos objetos
+//demosntração co o objeto normal incluindo o teste
+var objeto = {
+  nome: "Anna",
+  idade: 30,
+};
+objeto.teste = "Isso";
+
+//Agr com prototype adicionando a função andar dentro do objeto pessoa:
+Pessoa.prototype.andar = function () {
+  return console.log("Pessoa Andou");
+  //Pode inclusive usar os atributos da constructor function
+  //return console.log( this.nome + 'Pessoa Andou');
+};
+//A prioridade é do método que está no objeto. Caso duas funções andar uma dentro e outra no prototype ele usa a que está dentro do objeto.
+
+//___________________________//__________________________________________
+//Existem construtor de função de string de node list. Os construtores são sempre uma função acompanhada do construtor, nelas sempre tem propriedades e objetos q vc vai poder usar
+const pais = "Brasil";
+const cidade = new String("Rio");
+
+pais.charAt(0); // B vê quem está no index 0
+cidade.charAt(0); // R
+
+String.prototype;
+
+//___________________________//-__________________________________________
+//Array é um construtor
+const listaAnimais = ["Cachorro", "Gato", "Cavalo"];
+const lista = document.querySelectorAll("li"); //criou uma constante cahamada lista como  seletor que acomoda os itens da lista na node liste
+const listaArray = Array.prototype.slice.call(lista); // chama a lista selecionada para transformar em array- o call é um método de funções-transforma a nodelist em array pa ater mais opções.
+//outra opção de transformação seria dentro do array objeto não do prototype com:
+//Array.from(lista); Antes não tinha o .from
+console.log(Object.getOwnPropertyNames(Array));
+console.log(Object.getOwnPropertyNames(Array.prototype)); //esse get é um método do construtor object para mostrar quais as propriedades do objeto que eu estou passando
+
+//#Só os métodos dos prototipos são herdáveis
+[1, 2, 3].slice(); // existe
+//[1, 2, 3].from(); // não existe
+
+//É ipc vc lembrar que na vdd o q manipula é o que ele retorna-o resultado tem propriedades para interagir
+const Carro = {
+  marca: "Ford",
+  preco: 2000,
+  acelerar() {
+    return true;
+  },
+};
+
+Carro; // Object
+Carro.marca; // String
+Carro.preco; // Number
+Carro.acelerar; // Function
+Carro.acelerar(); // Boolean
+Carro.marca.charAt; // Function
+Carro.marca.charAt(0); // String
+//____________________________//_________________________________________
+// Crie uma função construtora de Pessoas
+// Deve conter nome, sobrenome e idade
+// Crie um método no protótipo que retorne
+// o nome completo da pessoa
+
+// Liste os métodos acessados por
+// dados criados com NodeList,
+// HTMLCollection, Document
+
+// Liste os construtores dos dados abaixo
+const li = document.querySelector("li");
+
+li;
+li.click;
+li.innerText;
+li.value;
+li.hidden;
+li.offsetLeft;
+li.click();
+
+// Qual o construtor do dado abaixo:
+li.hidden.constructor.name;
