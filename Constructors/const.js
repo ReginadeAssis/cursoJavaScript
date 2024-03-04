@@ -224,25 +224,57 @@ Carro.acelerar(); // Boolean
 Carro.marca.charAt; // Function
 Carro.marca.charAt(0); // String
 //____________________________//_________________________________________
-// Crie uma função construtora de Pessoas
-// Deve conter nome, sobrenome e idade
+// Crie uma função construtora de Pessoas3- Deve conter nome3, sobrenome3 e idade3
+function Pessoa3(nome3, sobrenome3, idade3) {
+  this.nome3 = nome3;
+  this.sobrenome3 = sobrenome3;
+  this.idade3 = idade3;
+}
 // Crie um método no protótipo que retorne
 // o nome completo da pessoa
-
-// Liste os métodos acessados por
-// dados criados com NodeList,
-// HTMLCollection, Document
+Pessoa3.prototype.nomeCompleto = function () {
+  return console.log(this.nome3 + this.sobrenome3);
+};
+const teste3 = new Pessoa3("Ana", "Julia", 34);
+// Liste os métodos acessados por dados criados com NodeList, HTMLCollection, Document:
+//A ideia é ir no objeto nodelist que é um construtor ver as propriedades e exibir-entra nesse caso nas propriedades do objeto:
+Object.getOwnPropertyNames(NodeList.prototype);
 
 // Liste os construtores dos dados abaixo
 const li = document.querySelector("li");
 
 li;
+//no console li.constructorname ai vê o que ele é Html li element dps digita HtmalLIElement.prototype vê as opções de manipulação-td herdado do construtor
 li.click;
+//no console li.click.constructor.name vc vê que é função
 li.innerText;
+// no console li.innerText.constructor.name
 li.value;
+// no console li.value.constructor.name
 li.hidden;
+// no console li.hidden.constructor.name
 li.offsetLeft;
+// no console li.offsetLeft.constructor.name
 li.click();
+// no console li.click.constructor.name. Não é nada quando é null e undefined pq é uma função que vai retornar algo mas por agr ela não retorna nada
 
 // Qual o construtor do dado abaixo:
 li.hidden.constructor.name;
+//É boolean, mas o valor que está retornando é uma strign. Logo, o tipo de dado que retorna é uma string
+
+//Tem os objetos nativos os do host e do usuario
+//nativos são aqueles especificos da linguagem e independentes do host, ou seja, abrindo em qualquer browser eles existem como objeto, string array e function.
+//Já o node list é um objeto do host no caso da pg do site-O nodejs não é browser
+//Os objetos do host são aqueles do proprio ambiente como domlist e html collection.
+//Os user são os objetos do usuario-criados por vc pode ser um simples ou uma bibliioteca
+//O ecmascript é o padrão o js é o q foi implementado
+//A engenie é resp por implementar o ecmascript ela interpreta o js e faz o código funcionar elas são diferentes do js.
+//As bibliotecas como o jquery foi criada para equilibrar as funções entre os browsers e trazer novas ferramentas
+//Para saber se um metodo existe vc vê o tipo dele se for undeffined ele não existe
+// if (typeof Array.from !== "undefined");
+// if (typeof NodeList !== "undefined");
+console.log(typeof ArrayList !== "undefined"); //ArrayList diferente de undefined?
+//API é aplication program interface é uma interface criada para interagir com outros softwaresex:console.log é a api do browser para mostar as mensagens
+
+//Liste 5 objetos nativos:Object, String, Array, Function e number
+// agr do browser: digita window no console: Window, HIstory, document, HTMLColection, NodeList
